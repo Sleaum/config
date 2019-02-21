@@ -150,7 +150,7 @@ bindsym $mod+Shift+O exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+Shift+B exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want shutdown now? This will turn off your computer.' -b 'Yes, turn off' 'i3-msg shutdown now'"
 
-bindsym $mod+Shift+P  exec i3lock
+bindsym $mod+Shift+L  exec i3lock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
