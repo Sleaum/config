@@ -1,0 +1,249 @@
+                     @@line(s) move cursor@@
++     ___________        _  +       +  _       _________   +
+?[] { 0 ^ F{} T{} Bb geE h (#) (%) (*) l eE wW t{} f{} $ } /[] move
+n         ;   ;             n       n          ;   ;       n   repeat
+N         ,   ,             N       N          ,   ,       N   reverse
+                            
+                    @@vertical move@@
+         @@cursor@@                 @@window@@
+             gg                       ^b (Back)         
+	     H (High)                 ^u (Up)           
+	     k                        zb (cursor text fix & Back win)
+	     M (Middle)               zz (cursor text fix & Middle win)
+             j                        zt (cursor text fix & Top win)
+	     L (Low)                  ^d (Down)         
+	     G                        ^f (Foward)       
+	        
+             gd   Goto Definition
+             ^n/p autocompletion
+	     
+caption:			
+[] word<CR>
+{} char
+() word under the cursor
+__ stay in the line
++  select in buffer same search
+
+
+
+
+1. The vim way
+
+    	$grep -n text * == :grep text *
+    	/ search foward
+    	? search backward
+    	vit      select between <></>
+    	vi{char} select between {char}
+    	:version 
+    
+    
+    tip 1.
+    	. repeats the last CHANGE
+    	u undo the CHANGE
+    	> {>,G}
+    tip 2.
+    	2 commands in 1 to use .
+    	A $a move last char   puis insert (include space)
+    	I ^i move 1 word      puis insert (hors espace)
+    	C c$ suppr cursor/end puis insert
+    	s cl suppr 1 char     puis insert
+    	S ^C
+    	o A<CR>               puis insert
+    	O ko                  puis insert
+    tip 3.
+    	move	change
+    	repeat	repeat
+    	f{char}	s{chars}
+    	;	.
+    tip 4.
+    	ACT                    REPEAT  REVERSE
+    	{edit}                 .       u
+    	f{}/t{}                ;       ,
+    	F{}/T{}                ;       ,
+    	/pattern<CR>           n       N
+    	?pattern<CR>           n       N
+    	:s/target/replacement  &       u
+    	qx{changes}q           @x      u
+         ((((*/#                   n       N))))
+    tip 5.
+    	astuce *, N, change, n, n, ., …
+    	             cw[blabla]<Esc>
+    tip 6.
+    	The DOT Formula
+    	1 keystroke to move and 1 keystroke to execute
+      
+PART I Modes
+
+2. normal mode
+    tip 7.
+    	None
+    tip 8.
+    	réflexion sur le découpage des changes pour les undos
+    	hjkl en normal & arrows in insert mode
+    tip 9.
+    	command motion
+    	d	aw delete a word + a space
+    		it delete inside balise <></>
+    		at delete balise
+    		ap delete paragraphe + lignes vides
+    	Choose a command useful with dot
+    tip 10.
+    	<C-a> increase number at or after the cursor
+    	<C-x> decrease (-180 => 180<C-x>)
+    	modif sans quitter le mode normal
+    tip 11.
+    	don't count if you can repeat
+    	granularity: atomic change then dot
+    tip 12.
+    	Operator + Motion = Action
+            1 d,c,y,…{motion}
+    	  =, <, > {motion}    'indent'
+    	2 g~, gu, gU {motion} 'case'           
+    	  gd                  'autocompletion'
+    
+3. insert mode
+    tip 13.
+    	^h backspace
+    	^w delete back one Word
+    	^u delete back to start of line
+    tip 14.
+    	^o switch tot insert normal mode
+    	   but stop the change…
+    tip 15.
+    	^r{reg} put from insert mode
+    tip 16.
+    	^r={calcul, cr} put the result from insert mode
+    tip 17.
+    	^v{code dec} 
+    	^vu{unicode hex}
+    	^k{char}{char} insert digraph
+    	ga give unicode number of char under cursor
+    tip 18.
+    	suite du 17
+    	:h digraph-table
+    tip 19.
+    	r,R   replace mode
+    	gr,gR virtual replace mode
+    
+4. visual mode
+    tip 20.
+    	^g select mode
+               useless, just use 'c'
+    tip 21.
+    	v  char-wise visual mode
+    	V  line-wise
+    	^v block-wise
+    	gv reselect last
+    	o  goto Other end
+    	Il s'agit de trois modes différents
+    	donc on peut passer de l'un à l'autre.
+    tip 22.
+    	:set shiftwidth=4 softtabstop=4 expandtab
+    	repeat visual change with dot
+    tip 23.
+    	dot sur visual ne s’applique ques sur même dimension
+    	attention si on veut faire une modif sur plus grand
+    	vitU 2 commands (ok if not repeative)
+    	gUit 1 command => better for dot
+    tip 24.
+    tip 25.
+    tip 26.
+
+5. command-line mode
+    tip 27.
+    tip 28.
+    tip 29.
+    tip 30.
+    tip 31.
+    tip 32.
+    tip 33.
+    tip 34.
+    tip 35.
+    tip 36.
+
+
+PART II — Files
+
+6. manage multiple files
+    tip 37.
+        load multi buffers
+        display :ls
+        del     :bd(elete)
+        navigate:bf(irst)
+                :bp(revious)
+                :bn(ext)
+                :bl(ast)
+    tip 38.
+        param   :args **/*.c **/*.txt
+                :next[!]
+                :prev[!]
+                :argdo to execute the same command on each buffer in the set.
+    tip 39.
+        :w      save buffer in file
+        :e!     discard buffer, keep file in disk
+        :qa[ll]!
+        :wa[ll]!
+    tip 40.
+    split:
+        ^ws              Split horizontaly with copy of the buffer (superH)
+        ^wv              split Verticaly   (superV)
+        :sp[lit]  {file} split with copy of file
+        :vsp[lit] {file}
+    focus:
+        ^ww = ^w^w
+        ^w(hjkl)
+    close:
+        :clo[se]            ^wc CLOse active window
+        :on[ly]             ^wo close Other  window
+    resiwe:
+        ^w=
+    tip 41.
+        tab = container of windows collection
+        :lcd {path}             modifier le path de la window
+        :windo lcd {}           modifier le path all win of tab
+        :tabe[dit] [{filename}] create a new tab
+        :tabc[lose]
+        :tabo[nly]
+        :tabn[next] [{N}] {N}gt switch to tab page number {N}
+        :tabp[revious]       gT
+        :tabmove [N]            rien => last
+                                0    => first
+
+7. Open Files and Save Them to Disk
+    tip 42.
+         
+    tip 43.
+    tip 44.
+    tip 45.
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    tip .
+    
