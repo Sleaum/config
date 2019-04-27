@@ -1,0 +1,5 @@
+export XDG_USER_CONFIG_DIR="$HOME/.config"
+mkdir -p $XDG_USER_CONFIG_DIR/rofi
+rofi -dump-config > $XDG_USER_CONFIG_DIR/rofi/config.rasi
+rofi -dump-theme > $XDG_USER_CONFIG_DIR/rofi/theme.rasi
+

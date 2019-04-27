@@ -18,24 +18,25 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'https://github.com/Valloric/YouCompleteMe.git'
-Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'https://github.com/powerline/powerline.git'
+"Plug 'scrooloose/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'https://github.com/tpope/vim-vinegar.git'
+Plug 'Valloric/YouCompleteMe'
+"Plug 'https://github.com/godlygeek/tabular.git'
+"Plug 'https://github.com/powerline/powerline.git'
 Plug 'https://github.com/hari-rangarajan/CCTree.git'
 call plug#end()
 
-nmap <F2> :CCTreeTraceForward<CR>
-nmap <F3> :CCTreeTraceReverse<CR>
-nmap <F4> :CCTreeLoadDB cscope.out<CR>
-nmap <F5> :!cscope -R<CR>
+nmap <F2> :!cscope -R<CR>
+nmap <F3> :CCTreeLoadDB cscope.out<CR>
+nmap <F4> :CCTreeTraceReverse<CR>
+nmap <F5> :CCTreeTraceForward<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :!ctags -R .<CR>
 colorscheme gruvbox
 set background=dark
 
-let g:Powerline_symbols = 'fancy'
-set laststatus=2
+"let g:Powerline_symbols = 'fancy'
+"set laststatus=2
 
