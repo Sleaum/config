@@ -3,6 +3,8 @@
 ?[] { 0 ^ F{} T{} Bb geE h (#) (%) (*) l eE wW t{} f{} $ } /[] move
 n         ;   ;             n       n          ;   ;       n   repeat
 N         ,   ,             N       N          ,   ,       N   reverse
+                                                           ^o
+                                                           ^i
                             
                     @@vertical move@@
          @@cursor@@                 @@window@@
