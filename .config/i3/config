@@ -27,13 +27,22 @@ bindsym $mod+s      layout toggle split
 bindsym $mod+n      focus parent
 bindsym $mod+m      focus child
 bindsym $mod+f      fullscreen toggle
-bindsym $mod+space  focus mode_toggle
 bindsym $mod+Left   focus left
 bindsym $mod+Down   focus down
 bindsym $mod+Up     focus up
 bindsym $mod+Right  focus right
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d      exec rofi -show drun
+bindsym $mod+w      exec feh --randomize --bg-fill ~/Pictures/wallpapers/*
+bindsym $mod+j      exec light -S 1
+bindsym $mod+l      exec i3lock
+bindsym $mod+space  floating toggle
+bindsym $mod+q      kill
+bindsym $mod+x      reload
+bindsym $mod+y      restart
+bindsym $mod+o      mode "exit: [l]ogout, [r]eboot, [s]hutdown"
+bindsym $mod+r      mode "resize"
+bindsym $mod+g      mode "$mode_gaps"
 
 ##
 # mod+shift
@@ -42,22 +51,17 @@ bindsym $mod+Shift+Left  move left
 bindsym $mod+Shift+Down  move down
 bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+Q     kill
-bindsym $mod+Shift+X     reload
-bindsym $mod+Shift+Y     restart
-bindsym $mod+Shift+O     mode "exit: [l]ogout, [r]eboot, [s]hutdown"
-bindsym $mod+Shift+R     mode "resize"
-bindsym $mod+Shift+G     mode "$mode_gaps"
-bindsym $mod+Shift+L     exec i3lock
+bindsym $mod+Shift+space focus mode_toggle
 bindsym $mod+Shift+B     exec chromium-browser
 bindsym $mod+Shift+N     exec nautilus
+
+##
+# i3bar
+##
 bar {
     status_command exec i3status
     position top
 }
-
-
 
 ##
 # always open some programs on specified workspace
@@ -131,7 +135,7 @@ bindsym $mod+Shift+0 move container to workspace $w0
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
   bindsym l exec i3-msg exit
   bindsym r exec systemctl reboot
-  bindsym s exec systemctl shutdown
+  bindsym s exec systemctl shutdown 
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
