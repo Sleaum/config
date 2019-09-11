@@ -23,8 +23,8 @@ caption:
 [] word<CR>
 {} char
 () word under the cursor
-__ stay in the line
-+  select in buffer same search
+__ search in line
++  search in buffer
 
 
 
