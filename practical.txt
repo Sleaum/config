@@ -136,7 +136,7 @@ PART I Modes
     	v  char-wise visual mode
     	V  line-wise
     	^v block-wise
-    	gv reselect last
+    	gv reselect last selection
     	o  goto Other end
     	Il s'agit de trois modes différents
     	donc on peut passer de l'un à l'autre.
@@ -149,6 +149,7 @@ PART I Modes
     	vitU 2 commands (ok if not repeative)
     	gUit 1 command => better for dot
     tip 24.
+    	^c{c(hange inside), I, A(ppend after)}
     tip 25.
     tip 26.
 
@@ -212,27 +213,43 @@ PART II — Files
         :tabmove [N]            rien => last
                                 0    => first
 
-7. Open Files and Save Them to Disk
+7. open files and save them to disk
     tip 42.
-         
+        :e
     tip 43.
+    	:f
     tip 44.
+    	netrw
     tip 45.
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
-    tip .
+    	:w
+    tip 46.
+    	:w
+
+
+PART II — Getting Around faster
+
+8. navigate inside files with motions
+    tip 47.
+    tip 48.
+    tip 49.
+    tip 50.
+    tip 51.
+    tip 52.
+    tip 53.
+    tip 54.
+    tip 55.
+    
+9. navigate between files with jumps
+    tip 56.
+    tip 57.
+    tip 58.
+    tip 59.
+    
+    
+PART II — Registers
+
+10. copy and paste
+    tip 60.
     tip .
     tip .
     tip .
