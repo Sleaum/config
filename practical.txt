@@ -1,5 +1,5 @@
                      @@line(s) move cursor@@
-+     ___________        _  +       +  _       _________   +
++   + ___________ +  +   _  +   +   +  _ +  +  _________   +
 ?[] { 0 ^ F{} T{} Bb geE h (#) (%) (*) l eE wW t{} f{} $ } /[] move
 n         ;   ;             n       n          ;   ;       n   repeat
 N         ,   ,             N       N          ,   ,       N   reverse
@@ -23,8 +23,9 @@ caption:
 [] word<CR>
 {} char
 () word under the cursor
-__ search in line
-+  search in buffer
+
+"_" search in line
+"+" search in buffer
 
 
 
