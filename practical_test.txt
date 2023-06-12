@@ -8,7 +8,7 @@
               T{}                              t{}			go to before next letter
           F{}                                      f{}			go to in     next letter
         ^ or _                                         			begin text
-      0                                                $		border line
+      0                                                  $		border line
     {                                                      }    	paragraph
 ?[]                                                          /[]	look for string in file
 n         ;   ;             n       n          ;   ;         n   
