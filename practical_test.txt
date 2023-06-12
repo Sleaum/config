@@ -1,10 +1,20 @@
                      @@line(s) move cursor@@
 +   + ___________ +  +   _  +   +   +  _ +  +  _________   +
-?[] { 0 ^ F{} T{} Bb geE h (#) (%) (*) l eE wW t{} f{} $ } /[] move
-n         ;   ;             n       n          ;   ;       n   repeat
-N         ,   ,             N       N          ,   ,       N   reverse
-                                                           ^o
-                                                           ^i
+                               (%)                            		move opposite brace
+                           (#)     (*)					select word
+                         h             l				1 caractere
+                     geE                 eE				move end   word
+                  Bb                        wW				move begin word
+              T{}                              t{}			go to before next letter
+          F{}                                      f{}			go to in     next letter
+        ^ or _                                         			begin text
+      0                                                $		border line
+    {                                                      } /[]	paragraph
+?[]                                                          /[]	look for string in file
+n         ;   ;             n       n          ;   ;         n   
+N         ,   ,             N       N          ,   ,         N   
+                                                             ^o
+                                                             ^i
                             
                     @@vertical move@@
          @@cursor@@                 @@window@@
