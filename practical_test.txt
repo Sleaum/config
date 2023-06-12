@@ -9,7 +9,7 @@
           F{}                                      f{}			go to in     next letter
         ^ or _                                         			begin text
       0                                                $		border line
-    {                                                      } /[]	paragraph
+    {                                                      }    	paragraph
 ?[]                                                          /[]	look for string in file
 n         ;   ;             n       n          ;   ;         n   
 N         ,   ,             N       N          ,   ,         N   
