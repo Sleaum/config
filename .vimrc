@@ -61,5 +61,6 @@ nmap <F12> :vertical terminal<CR>
 colorscheme gruvbox
 set background=dark
 
-
+"let g:Powerline_symbols = 'fancy'
+"set laststatus=2
 
