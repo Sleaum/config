@@ -42,10 +42,13 @@ call plug#end()
 "nmap <F3> :CCTreeLoadDB cscope.out<CR>
 "nmap <F4> :CCTreeTraceReverse<CR>
 "nmap <F5> :CCTreeTraceForward<CR>
-:map <F3> <C-w>j
-:map <F4> <C-w>k
-:map <F5> <C-w>h
-:map <F6> <C-w>l
+:nmap <C-d> :set list lcs+=space:.<CR>
+:nmap <C-v> :%s/\s\+$//g
+:nmap <S-d> :set nolist<CR>
+:map <C-t> <C-w>j
+":map <C-s!!!!!C-q> <C-w>k
+:map <C-c> <C-w>h
+:map <C-r> <C-w>l
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :!ctags -R .<CR>
