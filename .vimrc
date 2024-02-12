@@ -42,18 +42,22 @@ call plug#end()
 "nmap <F3> :CCTreeLoadDB cscope.out<CR>
 "nmap <F4> :CCTreeTraceReverse<CR>
 "nmap <F5> :CCTreeTraceForward<CR>
-:nmap <C-d> :set list lcs+=space:.<CR>
-:nmap <C-v> :%s/\s\+$//g
-:nmap <S-d> :set nolist<CR>
+
+:nmap <F2> ``
+:nmap <F3> :%s/\s\+$//g<CR>
+:nmap <F4> gg=G
+:nmap <F5> :set list lcs+=space:.<CR>
+:nmap <F6> :set nolist<CR>
 :map <C-t> <C-w>j
-":map <C-s!!!!!C-q> <C-w>k
+":map <C-s!!!!C-q> <C-w>k
 :map <C-c> <C-w>h
 :map <C-r> <C-w>l
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-nmap <F9> :!ctags -R .<CR>
-nmap <F2> <C-]>
+nmap <F9> <C-]>
+nmap <F10> :!ctags -R .<CR>
 nmap <F12> :vertical terminal<CR>
+
 colorscheme gruvbox
 set background=dark
 
